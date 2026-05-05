@@ -5,8 +5,14 @@
 window.VWO = window.VWO || [];
 window.VWO.push([
   "setVisitorId",
-  () => "test_user_HASH_999",
-  { variationSelection: "hash" }
+  () => {
+    // Get user ID from cookie or local storage
+    // Replace the key from localStorage or cookie as per your setup.
+    return localStorage.getItem("userId");
+  },
+  {
+    variationSelection: "hash", // Consistent variation assignment or use option "random" for other option.
+  },
 ]);
  </script>
  
